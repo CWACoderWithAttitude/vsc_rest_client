@@ -1,0 +1,40 @@
+@token = Bearer <your bearer token>
+@url = https://api.deutschebahn.com
+@eva_dortelweil = 8001514
+@date = 220213
+@hour = 13
+
+GET {{url}}/timetables/v1/station/dortelweil HTTP/1.1
+Authorization: {{token}}
+
+###
+
+GET {{url}}/timetables/v1/plan/{{eva_dortelweil}}/{{date}}/{{hour}} HTTP/1.1
+Authorization: {{token}}
+
+###
+
+GET {{url}}/timetables/v1/rchg/{{eva_dortelweil}} HTTP/1.1
+Authorization: {{token}}
+
+###
+
+GET {{url}}/stada/v2/stations?eva={{{{eva_dortelweil}}}} HTTP/1.1
+Authorization: {{token}}
+
+
+####
+GET {{url}}/stada/v2/stations?category=1-2&federalstate=hamburg&federalstate=hessen  HTTP/1.1
+Authorization: {{token}}
+
+####
+GET {{url}}/stada/v2/stations?searchstring=dortelweil  HTTP/1.1
+Authorization: {{token}}
+
+####
+GET {{url}}/stada/v2/stations?searchstring=bocholt  HTTP/1.1
+Authorization: {{token}}
+
+####
+GET {{url}}/freeplan/v1/location/frankfurt  HTTP/1.1
+Authorization: {{token}}
